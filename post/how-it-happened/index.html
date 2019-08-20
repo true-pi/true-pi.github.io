@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>True Pi  | How did it all go wrong with our Pi ?</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    
+
+    
+
+    <meta property="og:title" content="How did it all go wrong with our Pi ?" />
+<meta property="og:description" content="Explains why current way of calculating Pi (Foo Pi) fails" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://true-pi.github.io/post/how-it-happened/" />
+<meta property="article:published_time" content="2019-08-19T18:40:20+02:00" />
+<meta property="article:modified_time" content="2019-08-19T18:40:20+02:00" />
+<meta itemprop="name" content="How did it all go wrong with our Pi ?">
+<meta itemprop="description" content="Explains why current way of calculating Pi (Foo Pi) fails">
+
+
+<meta itemprop="datePublished" content="2019-08-19T18:40:20&#43;02:00" />
+<meta itemprop="dateModified" content="2019-08-19T18:40:20&#43;02:00" />
+<meta itemprop="wordCount" content="843">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How did it all go wrong with our Pi ?"/>
+<meta name="twitter:description" content="Explains why current way of calculating Pi (Foo Pi) fails"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://true-pi.github.io/images/foo-pi-school.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://true-pi.github.io" class="f3 fw2 hover-white no-underline white-90 dib">
+      True Pi
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Articles page">
+              Articles
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">How did it all go wrong with our Pi ?</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Explains why current way of calculating Pi (Foo Pi) fails
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        ARTICLES
+      </p>
+      <h1 class="f1 athelas mb1">How did it all go wrong with our Pi ?</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-08-19T18:40:20&#43;02:00">August 19, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>It all begins well over 2000 years ago (if you can believe history textbooks) in ancient Greece, with a man named <a href="https://en.wikipedia.org/wiki/Archimedes">Archimedes</a>.</p>
+
+<p>He devised a geometrical method of finding approximate value of Pi, by calculating perimeters of regular n-sided polygons.</p>
+
+<p>The idea was basically this:</p>
+
+<ul>
+<li>put one n-sided polygon that just fits inside the circle (inscribed polygon), and put another polygon that circumscribes the circle (fits around it).</li>
+<li>The circumference of the circle will be somewhere between perimeter of inner and outer polygons.</li>
+</ul>
+
+<p>Starting with two 6-sided regular polygons (hexagons), and doubling the number of sides in several steps, he reached two 96-sided regular polygons that more closely fit the curvature of the circle.</p>
+
+<p>Result was a proud declaration that <strong>&ldquo;proved&rdquo;</strong> value of <strong>Pi</strong> to be:</p>
+
+<p><sup>223</sup>&frasl;<sub>71</sub> &lt; <strong>Pi</strong> &lt; <sup>22</sup>&frasl;<sub>7</sub>     ( 3.14085 &lt; <strong>Pi</strong> &lt; 3.14286 )</p>
+
+<p>Unfortunately for our man Archimedes, and later, for thousands of mathematicians who proceeded to calculate this fake <strong>Foo Pi</strong> value to increasing number of decimal places &hellip; this <strong>proof and subsequent conclusion</strong> are simply <strong>wrong</strong>.</p>
+
+<h2 id="where-was-the-error-you-may-ask">Where was the error, you may ask ?</h2>
+
+<p>It was in the <strong>assumption</strong>.</p>
+
+<p>And assumption, as it is often said, is the mother of all &hellip; (<a href="https://www.urbandictionary.com/define.php?term=ASSUMPTION">you probably know that one</a>).</p>
+
+<h2 id="circle-with-two-6-sided-regular-polygons">Circle with two 6-sided regular polygons</h2>
+
+<p>Let us look at it in some detail, starting with basic <strong>6-sided polygon</strong> (hexagon) in the picture.</p>
+
+<p><img src="/images/6polyCircle.png" alt="Figure 2. Circle and 6-sided polygons" title="Circle with two 6-sided polygons" /></p>
+
+<p>Please forgive the ridiculous coloring, it is just for better visibility.</p>
+
+<p>There is red-painted hexagon outside, blue circle, and green hexagon inscribed inside the circle.
+Note that we are measuring perimeters (length of lines and not surface area) of circle and polygons.</p>
+
+<p>We have 6 equal segments, so everything we observe for one is valid for all of them.
+Let us look closely at one of these segments.</p>
+
+<p><img src="/images/6polySegment.png" alt="Figure 3. Single segment, 6-sided polygons" title="Single segment, 6-sided polygons" /></p>
+
+<p>Assumption is:</p>
+
+<p><strong>x</strong> &lt; <strong>a</strong> &lt; <strong>y</strong>   (for any value of <strong>n</strong>)</p>
+
+<p>Where:</p>
+
+<ul>
+<li><strong>x</strong> - side length of inscribed polygon</li>
+<li><strong>a</strong> - arc length of a single segment</li>
+<li><strong>y</strong> - side length of circumscribed polygon</li>
+<li><strong>n</strong> - number of sides of regular polygon (n-sided regular polygon)</li>
+</ul>
+
+<p><strong>x &lt; a</strong> is always valid - due to the obvious fact that straight line between two points is always shorter than any curved line going through these same two points. Straight line is the shortest path.</p>
+
+<p><strong>a &lt; y</strong> (for any value of <strong>n</strong>) is <strong>not always correct</strong>, and this is the part that fails.</p>
+
+<p>This part has never been mathematically proven, nor is it at all obvious from the picture.</p>
+
+<p><strong>a &lt; y</strong> is only valid for regular polygons with relatively small number of sides (more precisely, n &lt; 59). This may be the reason why it was overlooked in the first place, since it would take some skill to precisely create and measure polygons with larger number of sides.</p>
+
+<p>As the <strong>n</strong> (number of sides) increases, <strong>y</strong> will tend to be closer and closer to <strong>x</strong> in length, and arc <strong>a</strong> will be longer than any of them by a small amount. Multiply that small amount by a number of sides <strong>n</strong>, and there you have the error.</p>
+
+<p>If only our man Archimedes stopped at n = 48 , and did not do one more doubling of sides to reach n = 96 &hellip; he might had a correct conclusion, oh well.</p>
+
+<h2 id="circle-with-two-96-sided-regular-polygons">Circle with two 96-sided regular polygons</h2>
+
+<p>Let us look more closely at same setup, but now with <strong>96-sided polygons</strong> (same colors as above).</p>
+
+<p><img src="/images/96polyCircle.png" alt="Figure 4. Circle and 96-sided polygons" title="Circle with two 96-sided polygons" /></p>
+
+<p>What, you see only green circle with some blur on the edges ?</p>
+
+<p>That is correct, the difference between circles and polygons is so small on this scale, that only only green inner polygon is seen, and it looks like a circle at low resolution. (Better resolution pictures available below.)</p>
+
+<p>Now, let us enlarge one of these 96 segments, for your viewing pleasure:</p>
+
+<p><img src="/images/96polySegment.png" alt="Figure 5. Single segment, 96-sided polygons" title="Single segment, 96-sided polygons" /></p>
+
+<p>(For a better view, please open above image separately, by clicking <a href="/images/96polySegment.png" title="Single segment, 96-sided polygons">here</a> )</p>
+
+<p>Question: which outline looks <strong>longest</strong> to you ?</p>
+
+<p>If your answer was: arc of the blue circle looks longer than straight sides of either inner or outer polygon, you would indeed be correct.
+It <strong>is</strong> longer.</p>
+
+<p>And that is why Pi cannot be calculated correctly using this method.</p>
+
+<p>And all subsequent methods of determining <strong>Foo Pi</strong>, come from the same wrong assumption.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This is important to understand :</p>
+
+<p><strong>Length of a <em>curved line</em> cannot be correctly calculated using small segments of <em>straight lines</em> (rectification of a curve), no matter how small these segments are.</strong>
+<strong>Such method is only an approximation, and inherently contains an error.</strong></p>
+
+<p>Unfortunately this imprecise methodology is not exclusive to this case, but is a standard method on how science calculates dimensions of objects - rectification of the curve, <a href="https://en.wikipedia.org/wiki/Integral">Integral calculus</a>.</p>
+
+<h2 id="wait-i-need-to-check-these-drawings-for-myself">Wait, I need to check these drawings for myself !</h2>
+
+<p>These figures can be easily created with any good drawing application that supports vector graphics, like <a href="https://www.inkscape.org">Inkscape</a> (free, GPLv3 license).</p>
+
+<p>For your entertainment, Inkscape SVG files are provided :</p>
+
+<ul>
+<li><a href="images/6polyCircle.svg" title="Circle with two 6-sided polygons">6 sided polygon</a></li>
+<li><a href="images/96polyCircle.svg" title="Circle with two 96-sided polygons">96 sided polygon</a></li>
+</ul>
+
+<p>You may open them in <a href="https://www.inkscape.org">Inkscape</a>, and zoom-in almost to the maximum, to see the details.</p>
+
+<p>Be well.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://true-pi.github.io" >
+    &copy; 2019 True Pi
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
